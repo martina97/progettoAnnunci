@@ -14,7 +14,6 @@ public class RenterAnnounce {
     private String idOwner;
     private List<String> pictures;
     private String description;
-    private float evaluation;
     private int capacity;
     private float area;
     private float price;
@@ -72,9 +71,7 @@ public class RenterAnnounce {
 
     public String getDescription() { return description; }
 
-    public void setEvaluation(float evaluation) { this.evaluation = evaluation; }
 
-    public float getEvaluation() { return evaluation; }
 
     public void setFrom(LocalDate from) { this.from = from; }
 

@@ -22,17 +22,8 @@ public class PostedRenterAnnounceController {
 
     @FXML
     public Label address, description, ownerName, capacity, area, from, to, wifi, pets, parking, air, title, price;
-    //public Button backBtn;
-    public AnchorPane ap1;
-    public ImageView image1;
-    public AnchorPane ap2;
-    public ImageView image2;
-    public AnchorPane ap4;
-    public ImageView image4;
-    public AnchorPane ap3;
-    public ImageView image3;
-    public AnchorPane ap5;
-    public ImageView image5;
+    public AnchorPane ap1, ap2, ap3, ap4, ap5;
+    public ImageView image1, image2, image3, image4, image5;
 
     List<Image> fxImages = new ArrayList<>();
 

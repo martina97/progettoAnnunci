@@ -4,7 +4,6 @@ public class UserBean {
     private String id;
     private String password;
     private String userType;
-    public String nickname;
 
     public UserBean(){}
 
@@ -20,7 +19,5 @@ public class UserBean {
 
     public String getUserType(){return this.userType;}
 
-    public void setNickname(String myNickname){this.nickname=myNickname;}
 
-    public String getNickname(){return this.nickname;}
 }

@@ -92,7 +92,7 @@ public class MenuController {
     }
 
 
-    public void createStage(User bean) {        //QUA VA USATA ENTITY "USER" E NON BEAN!!
+    public void createStage(UserBean bean) {        //QUA VA USATA ENTITY "USER" E NON BEAN!!
         String userType = bean.getUserType();
         System.out.println("dentro createStage");
 

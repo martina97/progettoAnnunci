@@ -29,10 +29,45 @@ public class ListApartmentsController {
     private ApartmentBean aptBean= new ApartmentBean();
     private UserBean myUserBean= new UserBean();
     ArrayList<ApartmentBean> apartmentsList;
+    Stage stageList;
 
-    public void clickedOkBtn(ActionEvent actionEvent) {         //prepara dati dell'annuncio selezionato nella listView
+    public void clickedOkBtn(ActionEvent actionEvent) {//prepara dati dell'annuncio selezionato nella listView
 
         Stage stage = (Stage)okBtn.getScene().getWindow();
+
+        if (apartmentsList.isEmpty()) {
+            System.out.println("lista vuota");
+            System.out.println("il tipo è" + myUserBean.getUserType());
+            Main notify = new Main();
+            notify.notification(0,"NON POSSIEDI NESSUN APPARTAMENTO", "Verrai reindirizzato al menu principale");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController controller = loader.getController();
+                System.out.println("prima di createStage");
+                controller.createStage(myUserBean);
+                System.out.println("dopo di createStage");
+                Scene scene = new Scene(root);
+
+            /*
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("Menu");
+            primaryStage.setScene(scene);
+
+            primaryStage.show();
+            */
+
+                stage.setTitle("Menu");
+                stage.setScene(scene);
+
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
         int aptIndex= listView.getSelectionModel().getSelectedIndex();  //prendo indice dell'apt selezionato su listView
 
         aptBean=apartmentsList.get(aptIndex);
@@ -65,7 +100,7 @@ public class ListApartmentsController {
         }
     }
 
-    public void createListView(UserBean myUserBean) {      //creazione lista
+    public void createListView(UserBean userBean) {      //creazione lista
         //funzione che crea query in controller, quindi chiamo controller e gli passo myUserBean.getId
         //funzione deve restituire la lista
         //costruisco lista
@@ -74,7 +109,8 @@ public class ListApartmentsController {
         ArrayList<String> apartmentsNameList= new ArrayList<>();    //per poi renderli Observable
 
         ControllerRenterAnnounce cra= ControllerRenterAnnounce.getInstance();
-        apartmentsList=cra.createApartmentsList(myUserBean);    //lista di ApartamentBean
+        apartmentsList=cra.createApartmentsList(userBean);    //lista di ApartamentBean
+
 
         for(int i=0;i<apartmentsList.size();i++){
             System.out.println("B: "+apartmentsList.get(i).getIdApt());
@@ -92,6 +128,7 @@ public class ListApartmentsController {
         ObservableList<String> listViewElements = FXCollections.observableList(apartmentsNameList);
 
         listView.setItems(listViewElements);
+        myUserBean = userBean;
 
     }
 }
