@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="574.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.MenuController">
+   <children>
+      <Button layoutX="200.0" layoutY="160.0" mnemonicParsing="false" onAction="#clickedShowDashboard" prefHeight="150.0" prefWidth="402.0" text="VISUALIZZA BACHECA" />
+      <Button fx:id="createNewAnnounce" layoutX="206.0" layoutY="365.0" mnemonicParsing="false" onAction="#clickedNewAnnounceBtn" prefHeight="150.0" prefWidth="402.0" text="CREA NUOVO ANNUNCIO" />
+      <Label fx:id="title" alignment="CENTER" layoutX="119.0" layoutY="24.0" prefHeight="70.0" prefWidth="584.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font size="55.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="457.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.PostedTenantAnnounceController">
+
+    <children>
+        <Label fx:id="titleField" alignment="CENTER" layoutX="228.0" layoutY="65.0" prefHeight="30.0" prefWidth="281.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="TITLE" textAlignment="CENTER">
+            <font>
+                <Font size="29.0" />
+            </font></Label>
+        <Label fx:id="nameField" alignment="CENTER" layoutX="107.0" layoutY="138.0" prefHeight="19.0" prefWidth="177.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="NAME" />
+        <Label fx:id="cityField" alignment="CENTER" layoutX="507.0" layoutY="138.0" prefHeight="19.0" prefWidth="199.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="CITY" />
+        <Label fx:id="room" alignment="CENTER" layoutX="119.0" layoutY="199.0" prefHeight="27.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="ROOM" />
+        <Label fx:id="animalsAllowed" alignment="CENTER" layoutX="284.0" layoutY="385.0" prefHeight="19.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 5;" />
+        <Label fx:id="garden" alignment="CENTER" layoutX="75.0" layoutY="413.0" prefHeight="19.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 5;" />
+        <Label fx:id="wifi" alignment="CENTER" layoutX="74.0" layoutY="385.0" prefHeight="19.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 5;" />
+        <Label fx:id="idDateDep" alignment="CENTER" layoutX="530.0" layoutY="279.0" prefHeight="18.0" prefWidth="106.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="DATA DEP" />
+        <Label fx:id="idDateArr" alignment="CENTER" layoutX="530.0" layoutY="230.0" prefHeight="18.0" prefWidth="106.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="DATA ARR" />
+        <Label fx:id="people" alignment="CENTER" layoutX="119.0" layoutY="284.0" prefHeight="27.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="PEOPLE" />
+        <Label fx:id="bathrooms" alignment="CENTER" layoutX="119.0" layoutY="244.0" prefHeight="27.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 10;" text="BATH" />
+        <Label layoutX="32.0" layoutY="139.0" text="ID Utente:" underline="true" />
+        <Label layoutX="447.0" layoutY="139.0" text="Città" underline="true" />
+        <Label layoutX="30.0" layoutY="205.0" text="Numero stanze" underline="true" />
+        <Label layoutX="32.0" layoutY="249.0" text="Numero bagni" underline="true" />
+        <Label layoutX="23.0" layoutY="289.0" text="Numero persone" underline="true" />
+        <Label layoutX="431.0" layoutY="280.0" text="Partenza" underline="true" />
+        <Label layoutX="439.0" layoutY="228.0" text="Arrivo" underline="true" />
+        <Label layoutX="29.0" layoutY="336.0" text="Ulteriori servizi">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="36.0" layoutY="386.0" text="Wifi" />
+        <Label layoutX="23.0" layoutY="415.0" text="Giardino" />
+        <Label fx:id="airConditioning" alignment="CENTER" layoutX="284.0" layoutY="412.0" prefHeight="19.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 5;" />
+        <Label fx:id="parking" alignment="CENTER" layoutX="476.0" layoutY="394.0" prefHeight="19.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-radius: 5;" />
+        <Label layoutX="219.0" layoutY="386.0" text="Animali" />
+        <Label layoutX="182.0" layoutY="414.0" text="Aria condizionata" />
+        <Label layoutX="398.0" layoutY="395.0" text="Parcheggio" />
+        <Separator layoutX="6.0" layoutY="179.0" prefHeight="0.0" prefWidth="758.0" />
+        <Separator layoutX="6.0" layoutY="326.0" prefHeight="3.0" prefWidth="758.0" />
+        <Label alignment="CENTER" layoutX="153.0" text="ANNUNCIO CERCASI">
+            <font>
+                <Font size="47.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
