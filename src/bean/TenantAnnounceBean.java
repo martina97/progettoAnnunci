@@ -15,7 +15,7 @@ public class TenantAnnounceBean {
     private String wifi;
     private String garden;
     private String animals;
-    private String airConditionig;
+    private String airConditioning;
     private String parking;
 
     public TenantAnnounceBean() {}
@@ -53,8 +53,8 @@ public class TenantAnnounceBean {
     public void setAnimals(String animals) { this.animals = animals; }
     public String getAnimals() { return animals; }
 
-    public void setAirConditionig(String airConditionig) { this.airConditionig = airConditionig; }
-    public String getAirConditionig() { return airConditionig; }
+    public void setAirConditioning(String airConditioning) { this.airConditioning = airConditioning; }
+    public String getAirConditioning() { return airConditioning; }
 
     public void setParking(String parking) { this.parking = parking; }
     public String getParking() { return parking; }

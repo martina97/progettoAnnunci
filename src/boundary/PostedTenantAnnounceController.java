@@ -27,7 +27,7 @@ public class PostedTenantAnnounceController {
         wifi.setText(bean.getWifi());
         garden.setText(bean.getGarden());
         animalsAllowed.setText(bean.getAnimals());
-        airConditioning.setText(bean.getAirConditionig());
+        airConditioning.setText(bean.getAirConditioning());
         parking.setText(bean.getParking());
         
         System.out.println("showTenantAnnounce il bean del title è" + bean.getTitle());

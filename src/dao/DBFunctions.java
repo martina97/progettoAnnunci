@@ -272,7 +272,7 @@ public class DBFunctions {
                 tab.setWifi(rs2.getString("wifi"));
                 tab.setGarden(rs2.getString("garden"));
                 tab.setAnimals(rs2.getString("pets"));
-                tab.setAirConditionig(rs2.getString("airConditioning"));
+                tab.setAirConditioning(rs2.getString("airConditioning"));
                 tab.setParking(rs2.getString("parking"));
 
                 tenantList.add(tab);

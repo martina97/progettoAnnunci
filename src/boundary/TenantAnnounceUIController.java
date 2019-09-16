@@ -9,8 +9,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TenantAnnounceUIController {
 
@@ -84,9 +82,9 @@ public class TenantAnnounceUIController {
         }
 
         if (airConditioning.isSelected()) {
-            bean.setAirConditionig("si");
+            bean.setAirConditioning("si");
         } else {
-            bean.setAirConditionig("no");
+            bean.setAirConditioning("no");
         }
 
         if (parking.isSelected()) {

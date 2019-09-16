@@ -20,7 +20,7 @@ public class TenantAnnounce {
     private String parking;
 
     public TenantAnnounce(String title, String name, String city, int room, int people, int bath, LocalDate dateArr, LocalDate dateDep, String wifi, String garden,
-                          String animals, String airConditionig, String parking) {
+                          String animals, String airConditioning, String parking) {
         this.title = title;
         this.name = name;
         this.city = city;
@@ -32,7 +32,7 @@ public class TenantAnnounce {
         this.wifi = wifi;
         this.garden = garden;
         this.animals = animals;
-        this.airConditioning = airConditionig;
+        this.airConditioning = airConditioning;
         this.parking = parking;
     }
 

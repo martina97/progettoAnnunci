@@ -25,7 +25,7 @@ public class TenantAnnounceFacade {
                 tenantAnnounceBean.getTitle(), tenantAnnounceBean.getName(), tenantAnnounceBean.getCity(),
                 tenantAnnounceBean.getRoom(), tenantAnnounceBean.getPeople(), tenantAnnounceBean.getBath(),
                 tenantAnnounceBean.getDateArr(), tenantAnnounceBean.getDateDep(), tenantAnnounceBean.getWifi(),
-                tenantAnnounceBean.getGarden(), tenantAnnounceBean.getAnimals(), tenantAnnounceBean.getAirConditionig(), tenantAnnounceBean.getParking());
+                tenantAnnounceBean.getGarden(), tenantAnnounceBean.getAnimals(), tenantAnnounceBean.getAirConditioning(), tenantAnnounceBean.getParking());
         permission=myRulesInterface.booleanCheckAnnounce(myTenantAnnounce);
 
         if (permission){
