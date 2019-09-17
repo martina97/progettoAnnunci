@@ -26,7 +26,7 @@
     </tr>
     <tr>
         <th><input name="publishBtn" id="publishBtn" type="button" value="CREA NUOVO ANNUNCIO" class="btn btn-info"  onclick="window.location='CreateTenantAnnounce.jsp'"></th>
-<
+
 
 </table>
 

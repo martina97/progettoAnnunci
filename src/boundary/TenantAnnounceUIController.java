@@ -36,20 +36,6 @@ public class TenantAnnounceUIController {
 
     public void clickedPublishBtn(ActionEvent actionEvent) {
 
-/**************
-        List<String> textField = new ArrayList<>();
-        textField.add(titleField.getText());
-        textField.add(nameField.getText());
-        textField.add(cityField.getText());
-        textField.add(room.getText());
-        textField.add(bathrooms.getText());
-        textField.add(people.getText());
-
-        for(int i =0; i<textField.size();i++) {
-
-        }
-****************/
-
 
         bean.setTitle(titleField.getText());
         bean.setName(nameField.getText());
@@ -123,27 +109,6 @@ public class TenantAnnounceUIController {
         }
     }
 
-        /*
-        if (yearDep < yearArr) {
-            System.out.println("anno no");
-            return 0;
-        }
-        if (yearDep == yearArr) {
-            if (monthDep < monthArr) {
-                System.out.println("mese no");
-                return 0;
-            }
-            else if (monthDep == monthArr) {
-                if (dayDep < dayArr) {
-                    System.out.println("giorno no");
-                    return 0;
-                }
-            }
-        }
-        System.out.println("data ok");
-        return 1;
-
-    } */
 
 
     public void clickedOkButton(ActionEvent actionEvent) {
@@ -165,21 +130,4 @@ public class TenantAnnounceUIController {
     public void createStage(UserBean myBean) {
     }
 
-
-    /*****
-    public void showTenantAnnounce(TenantAnnounceBean bean) {
-
-        titleField.setText(bean.getTitle());
-        nameField.setText(bean.getName());
-        cityField.setText(bean.getCity());
-        room.setText(String.valueOf(bean.getRoom()));
-        bathrooms.setText(String.valueOf(bean.getBath()));
-        people.setText(String.valueOf(bean.getPeople()));
-
-
-        System.out.println("showTenantAnnounce il bean del title è" + bean.getTitle());
-
-
-    }
-     ******/
 }

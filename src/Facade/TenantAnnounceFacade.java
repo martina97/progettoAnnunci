@@ -8,7 +8,7 @@ import dao.DBFunctions;
 import entity.TenantAnnounce;
 
 public class TenantAnnounceFacade {
-    TenantAnnounceBean tenantAnnounceBean;
+    private TenantAnnounceBean tenantAnnounceBean;
     DBFunctions dbFunctions;
 
     public TenantAnnounceFacade(TenantAnnounceBean bean, DBFunctions dbf) {
@@ -16,7 +16,8 @@ public class TenantAnnounceFacade {
         this.dbFunctions=dbf;
     }
 
-    public void insertTenantAnnounce() {
+    public void
+    insertTenantAnnounce() {
         boolean permission;
         RulesInterface myRulesInterface= new Rules();
         Main notify=new Main();

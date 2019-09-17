@@ -33,6 +33,7 @@
 <%! String s12 = ""; %>     <%-- airConditioning --%>
 <%! String s13= ""; %>      <%-- parking --%>
 
+<!DOCTYPE html>
 <html>
 
 <body class="CreateTenantAnnounce">
@@ -59,14 +60,16 @@
     </tr>
     <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
     <tr>
-<%---
+
         <td>Numero stanze:</td>
-        <td><input name="room" type="text"></td>
-        <%tab.setRoom(Integer.parseInt(request.getParameter("room")));%>
+        <td><input name="room" type="int"></td>
+
+        <%s4= Integer.parseInt(request.getParameter("room"));%>
+        <%tab.setRoom((int)s4);%>
         <td>Arrivo:</td>
         <td><p> <input name="dateArr" type="date" id="dateArr"></p></td>
         <%tab.setDateArr(LocalDate.parse(request.getParameter("dateArr")));%>
-        ---%>
+
     </tr>
 
 
