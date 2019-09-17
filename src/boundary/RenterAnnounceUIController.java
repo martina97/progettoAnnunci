@@ -102,22 +102,8 @@ public class RenterAnnounceUIController implements Initializable {
 
         raBean.setPictures(fxImages);
 
-        //controllo che i campi non siano vuoti
 
-        //int checkPrice,checkDate;
 
-        //devo rimanere sullo stage
-        if (price.getText().isEmpty()) {
-            Main notify = new Main();
-            notify.notification(0, "ERRORE", "Riempire tutti i campi dell'annuncio!");
-        }
-
-        if (Float.parseFloat(price.getText())< 1) {
-        } else {
-            Main notify = new Main();
-            notify.notification(0, "ERRORE", "Riempire tutti i campi dell'annuncio!");
-
-        }
 
         ControllerRenterAnnounce cra= ControllerRenterAnnounce.getInstance();
         System.out.println("sto in Controller");
