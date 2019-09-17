@@ -31,36 +31,44 @@ public class ListApartmentsController {
     ArrayList<ApartmentBean> apartmentsList;
     Stage stageList;
 
+    public ListApartmentsController() {}
+
+
+
     public void clickedOkBtn(ActionEvent actionEvent) {//prepara dati dell'annuncio selezionato nella listView
 
         Stage stage = (Stage)okBtn.getScene().getWindow();
 
-        if (apartmentsList.isEmpty()) {
-            System.out.println("lista vuota");
-            System.out.println("il tipo è" + myUserBean.getUserType());
-            Main notify = new Main();
-            notify.notification(0,"NON POSSIEDI NESSUN APPARTAMENTO", "Verrai reindirizzato al menu principale");
+
+
+
+
+            int aptIndex = listView.getSelectionModel().getSelectedIndex();  //prendo indice dell'apt selezionato su listView
+
+            aptBean = apartmentsList.get(aptIndex);
+            System.out.println("Tornati nel BOUNDARY: id dell'apt selezionato è= " + aptBean.getIdApt());
+
+            System.out.println("element=" + aptIndex);
+            ControllerRenterAnnounce cra = ControllerRenterAnnounce.getInstance();
+
+            Apartment myApartment = cra.createApartment(aptBean);
+
+            System.out.println("idApt= " + myApartment.getIdApt() + "   descrizione= " + myApartment.getDescription());
+
+            //apro stage con le info gia prese dalle apt e le info che dovrò inserire manualmente
+
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/Menu.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/RenterAnnounceUI.fxml"));
                 Parent root = loader.load();
-                MenuController controller = loader.getController();
-                System.out.println("prima di createStage");
-                controller.createStage(myUserBean);
-                System.out.println("dopo di createStage");
+                RenterAnnounceUIController controller = loader.getController();
+                controller.createStage(myApartment, myUserBean);
                 Scene scene = new Scene(root);
 
-            /*
-            Stage primaryStage = new Stage();
-            primaryStage.setTitle("Menu");
-            primaryStage.setScene(scene);
-
-            primaryStage.show();
-            */
-
-                stage.setTitle("Menu");
+                stage.setTitle("Renter Announce");
                 stage.setScene(scene);
 
                 stage.show();
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -68,39 +76,7 @@ public class ListApartmentsController {
         }
 
 
-        int aptIndex= listView.getSelectionModel().getSelectedIndex();  //prendo indice dell'apt selezionato su listView
-
-        aptBean=apartmentsList.get(aptIndex);
-        System.out.println("Tornati nel BOUNDARY: id dell'apt selezionato è= "+aptBean.getIdApt());
-
-        System.out.println("element="+aptIndex);
-        ControllerRenterAnnounce cra= ControllerRenterAnnounce.getInstance();
-
-        Apartment myApartment=cra.createApartment(aptBean);
-
-        System.out.println("idApt= "+myApartment.getIdApt()+"   descrizione= "+myApartment.getDescription());
-
-        //apro stage con le info gia prese dalle apt e le info che dovrò inserire manualmente
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/RenterAnnounceUI.fxml"));
-            Parent root = loader.load();
-            RenterAnnounceUIController controller = loader.getController();
-            controller.createStage(myApartment,myUserBean);
-            Scene scene = new Scene(root);
-
-            stage.setTitle("Renter Announce");
-            stage.setScene(scene);
-
-            stage.show();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void createListView(UserBean userBean) {      //creazione lista
+    public int createListView(UserBean userBean) {      //creazione lista, ritorna 0 se lista vuota
         //funzione che crea query in controller, quindi chiamo controller e gli passo myUserBean.getId
         //funzione deve restituire la lista
         //costruisco lista
@@ -128,7 +104,13 @@ public class ListApartmentsController {
         ObservableList<String> listViewElements = FXCollections.observableList(apartmentsNameList);
 
         listView.setItems(listViewElements);
-        myUserBean = userBean;
+        myUserBean= userBean;
+
+        if (apartmentsList.isEmpty()) {
+            return 0;
+        }
+        return 1;
+        }
 
     }
-}
+
