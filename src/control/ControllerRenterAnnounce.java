@@ -7,6 +7,7 @@ import boundary.PostedRenterAnnounceController;
 import entity.Apartment;
 import entity.RenterAnnounce;
 import dao.DBFunctions;
+import entity.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -32,7 +33,7 @@ public class ControllerRenterAnnounce {
         return instance;
     }
 
-    public void validateAnnounce(RenterAnnounceBean bean, Apartment apartment, Stage stage){
+    public void validateAnnounce(RenterAnnounceBean raBean, Apartment apartment, Stage stage, UserBean bean){
         String idOwner;
 
         RenterAnnounce announce;
@@ -41,25 +42,25 @@ public class ControllerRenterAnnounce {
 
         //idOwner=dbf.searchNickname(apartment.getIdOwner());  //prendo nickname proprietario, lo metto nell'annuncio ma lo vedo sulla label solo una volta che l'annuncio è stato pubblicato
         //bean.setIdOwner(idOwner);
-        bean.setIdApt(apartment.getIdApt());
-        bean.setAddress(apartment.getAddress());
-        bean.setDescription(apartment.getDescription());
-        bean.setCapacity(apartment.getCapacity());
-        bean.setArea(apartment.getArea());
+        raBean.setIdApt(apartment.getIdApt());
+        raBean.setAddress(apartment.getAddress());
+        raBean.setDescription(apartment.getDescription());
+        raBean.setCapacity(apartment.getCapacity());
+        raBean.setArea(apartment.getArea());
 
-        System.out.println("id è " + bean.getIdApt());
-        System.out.println("address "+ bean.getAddress());
-        System.out.println("descr" + bean.getDescription());
-        System.out.println("capacity" + bean.getCapacity());
-        System.out.println("area" + bean.getArea());
-        System.out.println("price "+ bean.getPrice());
-        System.out.println("from" + bean.getFromDate());
-        System.out.println("to "+ bean.getToDate());
-        System.out.println("title" + bean.getTitle());
-        System.out.println("wifi" + bean.getWifi());
-        System.out.println("animals" + bean.getAnimals());
-        System.out.println("parking" + bean.getParking());
-        System.out.println("air" + bean.getAirConditioning());
+        System.out.println("id è " + raBean.getIdApt());
+        System.out.println("address "+ raBean.getAddress());
+        System.out.println("descr" + raBean.getDescription());
+        System.out.println("capacity" + raBean.getCapacity());
+        System.out.println("area" + raBean.getArea());
+        System.out.println("price "+ raBean.getPrice());
+        System.out.println("from" + raBean.getFromDate());
+        System.out.println("to "+ raBean.getToDate());
+        System.out.println("title" + raBean.getTitle());
+        System.out.println("wifi" + raBean.getWifi());
+        System.out.println("animals" + raBean.getAnimals());
+        System.out.println("parking" + raBean.getParking());
+        System.out.println("air" + raBean.getAirConditioning());
         //System.out.println("idOwner" + bean.getIdOwner());
 
 
@@ -89,7 +90,7 @@ public class ControllerRenterAnnounce {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/PostedRenterAnnounce.fxml"));
             Parent root = loader.load();
             PostedRenterAnnounceController controller = loader.getController();
-            controller.showRenterAnnounce(bean);
+            controller.showRenterAnnounce(raBean,bean,stage);
             Scene scene = new Scene(root);
 
             //Stage primaryStage = new Stage();
@@ -103,7 +104,7 @@ public class ControllerRenterAnnounce {
             e.printStackTrace();
         }
 
-        announce=new RenterAnnounce(bean.getIdApt(),bean.getAddress(),bean.getDescription(),bean.getCapacity(),bean.getArea(),bean.getPrice(),bean.getFromDate(),bean.getToDate(),bean.getTitle(),bean.getWifi(),bean.getAnimals(),bean.getParking(),bean.getAirConditioning());
+        announce=new RenterAnnounce(raBean.getIdApt(),raBean.getAddress(),raBean.getDescription(),raBean.getCapacity(),raBean.getArea(),raBean.getPrice(),raBean.getFromDate(),raBean.getToDate(),raBean.getTitle(),raBean.getWifi(),raBean.getAnimals(),raBean.getParking(),raBean.getAirConditioning());
 
         dbf.insertNewRenterAnnounce(announce);
 

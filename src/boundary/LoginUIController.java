@@ -25,14 +25,6 @@ public class LoginUIController implements Initializable {
     @FXML
     private PasswordField myPwd;
 
-    String ID;
-    String password;
-
-
-    String ID2;
-    String password2;
-
-    User utente;
 
     private UserBean bean= new UserBean();
 

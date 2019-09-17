@@ -43,6 +43,7 @@ public class ControllerLogin {
 
 
     public void validateLogin(UserBean bean, Stage stage) {
+
         int res;
         String userType;
 
@@ -80,9 +81,13 @@ public class ControllerLogin {
         DBFunctions dbf = new DBFunctions();
 
         userType = dbf.getUserType(bean.getId(), bean.getPassword());
+        //nickname= dbf.searchNickname(bean.getId());
 
+        System.out.println("userType=" + userType);
+       // System.out.println("nickname=" + nickname);
 
         bean.setUserType(userType);
+        //bean.setNickname(nickname);
         myUser= new User(bean.getId(),bean.getPassword(),bean.getUserType());   //creazione dell'oggetto utente
 
         Main notify = new Main();
@@ -128,6 +133,23 @@ public class ControllerLogin {
 
     }
 
+    /*
+    public void startUC(Stage primaryStage) {
 
+        //Stage primaryStage = new Stage();
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
+            primaryStage.setTitle("Login ");
+            primaryStage.setScene(new Scene(root, 800, 800));
+            primaryStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    */
 }
 

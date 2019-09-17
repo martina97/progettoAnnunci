@@ -36,8 +36,8 @@
         <tr>
             <td>Titolo Annuncio:</td>
             <td><input name="title" type="text"></td>
-            <tr>Città:</tr>
-            <tr><input name="password" type="password"></tr>
+            <td>Città:</td>
+            <td><input name="password" type="password"></td>
         </tr>
         <tr>
             <td>Città:</td>

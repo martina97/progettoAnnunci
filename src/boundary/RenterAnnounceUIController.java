@@ -14,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import thread.ListImages;
-import thread.ThreadImages;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,8 +52,10 @@ public class RenterAnnounceUIController implements Initializable {
     @FXML
     private DatePicker fromDate, toDate;
 
-    private RenterAnnounceBean bean=new RenterAnnounceBean();
+    private RenterAnnounceBean raBean =new RenterAnnounceBean();
+    private UserBean bean = new UserBean();
     private Apartment myApt;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,41 +66,41 @@ public class RenterAnnounceUIController implements Initializable {
     public void publishButtonClicked(ActionEvent actionEvent) {
         Stage stage = (Stage)title.getScene().getWindow();
 
-        bean.setTitle(title.getText());
-        bean.setPrice(Float.parseFloat(price.getText()));
-        bean.setFromDate(fromDate.getValue());
-        bean.setToDate(toDate.getValue());
+        raBean.setTitle(title.getText());
+        raBean.setPrice(Float.parseFloat(price.getText()));
+        raBean.setFromDate(fromDate.getValue());
+        raBean.setToDate(toDate.getValue());
         //bean.setIdOwner(ownerName.getText());
 
         if (wifi.isSelected()){
-            bean.setWifi("si");
+            raBean.setWifi("si");
         }
         else{
-            bean.setWifi("no");
+            raBean.setWifi("no");
         }
 
         if (animalsAllowed.isSelected()){
-            bean.setAnimals("si");
+            raBean.setAnimals("si");
         }
         else{
-            bean.setAnimals("no");
+            raBean.setAnimals("no");
         }
 
         if (parking.isSelected()){
-            bean.setParking("si");
+            raBean.setParking("si");
         }
         else{
-            bean.setParking("no");
+            raBean.setParking("no");
         }
 
         if (airConditioning.isSelected()){
-            bean.setAirConditioning("si");
+            raBean.setAirConditioning("si");
         }
         else{
-            bean.setAirConditioning("no");
+            raBean.setAirConditioning("no");
         }
 
-        bean.setPictures(fxImages);
+        raBean.setPictures(fxImages);
 
         //controllo che i campi non siano vuoti
 
@@ -120,7 +121,7 @@ public class RenterAnnounceUIController implements Initializable {
 
         ControllerRenterAnnounce cra= ControllerRenterAnnounce.getInstance();
         System.out.println("sto in Controller");
-        cra.validateAnnounce(bean,myApt,stage);
+        cra.validateAnnounce(raBean,myApt,stage,bean);
     }
 
     //scena su cui inserisco i dati e ci sono già i dati dell'appartamento presi dal DB
@@ -170,6 +171,8 @@ public class RenterAnnounceUIController implements Initializable {
         image5.fitWidthProperty().bind(ap2.widthProperty());
         image5.fitHeightProperty().bind(ap2.heightProperty());
         image5.setPreserveRatio(false);
+
+        bean = myUserBean;
 
 
     }

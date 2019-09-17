@@ -2,6 +2,7 @@ package boundary;
 
 import bean.RenterAnnounceBean;
 import bean.TenantAnnounceBean;
+import bean.UserBean;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,10 +27,10 @@ public class ShowDashboardUIController {
 
     public ArrayList<TenantAnnounceBean> tList;
 
-
+    UserBean bean = new UserBean();
     //ControllerShowDashboard myController;
 
-
+    Stage stage;
 /*
     public void ShowDashboardUIController(ControllerShowDashboard controller) {
 
@@ -57,17 +58,18 @@ public class ShowDashboardUIController {
             //abbiamo selezionato l'annuncio renter
             try {
 
+                System.out.println("stage è ]]]]]]]]]]]]]]]]]]]]]]]]]]]]" + stage);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/PostedRenterAnnounce.fxml"));
                 Parent root = loader.load();
                 PostedRenterAnnounceController controller = loader.getController();
-                controller.showRenterAnnounce(rList.get(renterIndex-1));
+                controller.showRenterAnnounce(rList.get(renterIndex-1),bean,stage);
                 Scene scene = new Scene(root);
 
-                Stage primaryStage = new Stage();
-                primaryStage.setTitle("Annuncio Affittasi");
-                primaryStage.setScene(scene);
+               // Stage primaryStage = new Stage();
+                stage.setTitle("Annuncio Affittasi");
+                stage.setScene(scene);
 
-                primaryStage.show();
+                stage.show();
 
 
             } catch (IOException e) {
@@ -80,7 +82,6 @@ public class ShowDashboardUIController {
 
             //abbiamo selezionato l'annuncio tenant
             try {
-
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/PostedTenantAnnounce.fxml"));
                 Parent root = loader.load();
                 PostedTenantAnnounceController controller = loader.getController();
@@ -116,7 +117,7 @@ public class ShowDashboardUIController {
     }
 
 
-    public void createListViewAnnounces(ArrayList<RenterAnnounceBean> renterList, ArrayList<TenantAnnounceBean> tenantList) {
+    public void createListViewAnnounces(ArrayList<RenterAnnounceBean> renterList, ArrayList<TenantAnnounceBean> tenantList, UserBean myBean,Stage myStage) {
 
 
         //RENTER
@@ -154,5 +155,10 @@ public class ShowDashboardUIController {
 
         rList = renterList;
         tList = tenantList;
+
+        bean = myBean;
+        stage = myStage;
+        System.out.println("stage1 è ]]]]]]]]]]]]]]]]]]]]]]]]]]]]" + stage);
+
     }
 }
