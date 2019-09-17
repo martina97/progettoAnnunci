@@ -27,16 +27,21 @@ public class ControllerLogin {
     }
 
     public static int validateLoginWeb(UserBean bean) {
+        String myId="t1";
+        String myPassword="root2";
 
+        if (bean.getId().equals(myId) && bean.getPassword().equals(myPassword)){
+            return 1;
+        }
+        return 0;
+
+        /*
         int res;
-        String userType;
-        System.out.println("bean.getId= "+bean.getId());
-        System.out.println("bean.getPassword= "+bean.getPassword());
-
         DBFunctions dbf = new DBFunctions();
         res = dbf.checkLogin(bean.getId(), bean.getPassword());
         System.out.println("res= "+res);
         return res;
+         */
 
 
     }

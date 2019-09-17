@@ -28,16 +28,8 @@ public class ControllerTenantAnnounce {
 //
 
     public void createTenantAnnounce(TenantAnnounceBean bean) {
-        String prova ;
-
 
         DBFunctions dbf = new DBFunctions();
-
-
-        //TenantAnnounceBean tab = new TenantAnnounceBean();
-
-        prova = bean.getTitle();
-        System.out.println("prova è " + prova);
 
 
         try {

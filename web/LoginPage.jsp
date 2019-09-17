@@ -11,6 +11,8 @@
 <jsp:setProperty name="loginBean" property="*"/>
 <%! String s1 = ""; %>
 <%! String s2 = ""; %>
+<%! String s3 = ""; %>
+<%! int res = 0; %>
 
 
 <!--istruzioni java -->
@@ -33,7 +35,13 @@
         loginBean.setId(s1);
         loginBean.setPassword(s2);
 
-        if (ControllerLogin.validateLoginWeb(loginBean) > 0) {
+        loginBean.setUserType(String.valueOf(2));
+
+        s3=loginBean.getUserType();
+        session.setAttribute("userType",s3);
+        res=ControllerLogin.validateLoginWeb(loginBean);
+
+        if (res > 0) {
             %>
             <!-- Passa il controllo alla nuova pagina -->
             <jsp:forward page="RiassuntoLogin.jsp"/>	<!-- inizia con jsp e non è istruz java-->
@@ -45,7 +53,7 @@
         }
     } else {
         %>
-        <p class="text-info">Accesso non effettuato</p>
+        <p class="text-info">Inserisci le tue credenziali:</p>
         <%
     }
 %>
@@ -66,12 +74,12 @@
 
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body class="nostroSito">
+<body class="login">
 
 
 <div class="container">
     <form action="LoginPage.jsp" name="myform" method="POST">
-<%--
+
         <div class="row">
             <div class="col-lg-4 form-group">
                 <label for="id">Username</label>
@@ -92,23 +100,7 @@
                        id="reset" class="btn btn-warning">
             </div>
         </div>
---%>
-        <! table class="table table-responsive">
-            <tr>
-                <td>Username:</td>
-                <td><input name="username" type="text"></td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input name="password" type="password"></td>
-            </tr>
-            <tr>
-                <td colspan=2 align="center">
-                    <input name="login" type="submit"
-                           id="login" value="login" class="btn btn-info">
-                </td>
-            </tr>
-        </table-->
+
     </form>
 </div>
 </body>
