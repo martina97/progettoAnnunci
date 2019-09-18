@@ -102,8 +102,9 @@ public class ListApartmentsController {
         }
 
         ObservableList<String> listViewElements = FXCollections.observableList(apartmentsNameList);
-
+        System.out.println("listViewElements= "+listViewElements);
         listView.setItems(listViewElements);
+
         myUserBean= userBean;
 
         if (apartmentsList.isEmpty()) {

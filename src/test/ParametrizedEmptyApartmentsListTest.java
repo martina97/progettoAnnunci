@@ -3,6 +3,7 @@ package test;
 
 import bean.UserBean;
 import boundary.ListApartmentsController;
+import control.ControllerRenterAnnounce;
 import dao.DBFunctions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -47,8 +48,9 @@ public class ParametrizedEmptyApartmentsListTest {
     @Test
     public void test(){
 
-        ListApartmentsController list=new ListApartmentsController();
-        Assert.assertEquals("Se il locatore non ha inserito nessun appartamento nel sistema, non potrà creare un nuovo annuncio.",0,list.createListView(userBean));
+        //ListApartmentsController list=new ListApartmentsController();
+        ControllerRenterAnnounce list=ControllerRenterAnnounce.getInstance();
+        Assert.assertNotNull("Se il locatore non ha inserito nessun appartamento nel sistema, non potrà creare un nuovo annuncio.",list.createApartmentsList(userBean));
     }
 
 }

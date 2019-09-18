@@ -44,7 +44,7 @@
         if (res == 1) {
             %>
             <!-- Passa il controllo alla nuova pagina -->
-            <jsp:forward page="RiassuntoLogin.jsp"/>	<!-- inizia con jsp e non è istruz java-->
+            <jsp:forward page="TenantMenu.jsp"/>	<!-- inizia con jsp e non è istruz java-->
             <%
         } else {
             %>
@@ -79,7 +79,7 @@
 
 
 <div class="container">
-    <form action="LoginPage.jsp" name="myform" method="POST">
+    <form action="Login.jsp" name="myform" method="POST">
 
         <div class="row">
             <div class="col-lg-4 form-group">
