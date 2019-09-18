@@ -128,6 +128,7 @@ public class TenantAnnounceUIController {
 
 
     public void createStage(UserBean myBean) {
+        nameField.setText(myBean.getId());
     }
 
 }

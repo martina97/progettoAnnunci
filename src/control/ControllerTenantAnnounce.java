@@ -16,7 +16,7 @@ public class ControllerTenantAnnounce {
 
     private static ControllerTenantAnnounce instance;
 
-    private ControllerTenantAnnounce(){}
+    public ControllerTenantAnnounce(){}
 
     public  static ControllerTenantAnnounce getInstance(){
         if(instance==null){

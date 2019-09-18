@@ -78,6 +78,8 @@ public class DBFunctions {
             }
 
             res = rs.getString("userType");
+            System.out.println("sto in getUserType e res è :" + res);
+
             return res;
 
 

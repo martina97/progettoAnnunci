@@ -41,7 +41,7 @@
         session.setAttribute("userType",s3);
         res=ControllerLogin.validateLoginWeb(loginBean);
 
-        if (res > 0) {
+        if (res == 1) {
             %>
             <!-- Passa il controllo alla nuova pagina -->
             <jsp:forward page="RiassuntoLogin.jsp"/>	<!-- inizia con jsp e non è istruz java-->
@@ -73,6 +73,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <link href="css/style.css" rel="stylesheet" type="text/css">
+
 </head>
 <body class="login">
 

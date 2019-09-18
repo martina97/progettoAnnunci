@@ -145,7 +145,7 @@ public class ShowDashboardUIController {
         announcesTenantList.add("---Nessuno---");
 
         for (int i=0; i < tenantList.size(); i++) {
-            announcesTenantList.add(tenantList.get(i).getName());
+            announcesTenantList.add(tenantList.get(i).getTitle());
         }
 
 

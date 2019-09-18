@@ -27,25 +27,40 @@ public class ControllerLogin {
     }
 
     public static int validateLoginWeb(UserBean bean) {
-        String myId="t1";
-        String myPassword="root2";
-
-        if (bean.getId().equals(myId) && bean.getPassword().equals(myPassword)){
-            return 1;
-        }
-        return 0;
-
-        /*
         int res;
+        int res2;
         DBFunctions dbf = new DBFunctions();
         res = dbf.checkLogin(bean.getId(), bean.getPassword());
         System.out.println("res= "+res);
-        return res;
-         */
+        if (res == 1) {
 
+            res2 = checkUserTypeWeb(bean);
+            if (res2 == 1) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        else {
+            return 0;
+        }
 
     }
+    public static int checkUserTypeWeb(UserBean bean) {
+        User myUser;
+        String userType;
 
+        DBFunctions dbf = new DBFunctions();
+
+        userType = dbf.getUserType(bean.getId(), bean.getPassword());
+        System.out.println("userType= " + userType);
+
+        if (userType.equals("2")) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 
     public void validateLogin(UserBean bean, Stage stage) {
 
