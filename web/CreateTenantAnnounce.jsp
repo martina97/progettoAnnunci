@@ -55,7 +55,7 @@
         <td><input name="city" type="text"></td>
         <%tab.setCity(request.getParameter("city"));%>
         <td>Id Utente:</td>
-        <td><Label name="idUser" type="text"> </td>
+        <td><Label name="idUser" type="text"> </label> </td>
         <%tab.setName(request.getParameter("idUser"));%>
     </tr>
     <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
@@ -111,5 +111,6 @@
     </tr>
 
 </table>
+</form>
 </body>
 </html>

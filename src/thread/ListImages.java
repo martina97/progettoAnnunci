@@ -23,8 +23,9 @@ public class ListImages {
         Thread threadVector[] = new Thread[size];   //crea un vettore di thread (uno per immagine)
 
         for (int x = 0; x < size; x++) {
+            ThreadImages t= new ThreadImages(images.get(x), fxImages);
 
-            threadVector[x] = new Thread(new ThreadImages(images.get(x), fxImages)); //all'i-esimo posto del vettore CREA un thread
+            threadVector[x] = new Thread(t); //all'i-esimo posto del vettore CREA un thread
 
             threadVector[x].setName("Thread " + x + " per il caricamento delle immagini");
 

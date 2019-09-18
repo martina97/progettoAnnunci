@@ -304,35 +304,3 @@ public class DBFunctions {
 
 
 
-/*
-    public String searchNickname(String id) {
-
-        try {
-            System.out.println("DBFunction: id=" + id);
-
-            PreparedStatement statement = dbConn.openConnection().prepareStatement(searchNicknameByUser);
-            statement.setString(1,id);
-            ResultSet rs = statement.executeQuery();
-
-
-            if (rs.first() == false) {
-                //ERRORE- da gestire
-                return null;
-            }
-
-            String res = rs.getString("nickname");
-            System.out.println("DBFunction: res=" + res);
-            return res;
-
-
-        } catch (SQLException e) {
-            System.out.println("Database exception");
-            e.printStackTrace();
-        } finally {
-            dbConn.closeConnection();
-        }
-
-        return null;      //qui non deve arrivarci
-    }
-    */
-
