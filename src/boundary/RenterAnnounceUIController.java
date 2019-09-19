@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import thread.ListImages;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -161,5 +162,40 @@ public class RenterAnnounceUIController implements Initializable {
         bean = myUserBean;
 
 
+    }
+
+    public void clickedOkBtn(ActionEvent actionEvent) {
+        Main notify = new Main();
+
+        if (checkDate() == 0) {
+            notify.notification(0, "DATA ERRATA", "Inserisci una data successiva a quella attuale");
+        }
+        if (checkDate() == 1) {
+            notify.notification(0, "DATA ERRATA", "Inserisci una data successiva a quella di arrivo.");
+        }
+        else if (checkDate() == 2) {
+            notify.notification(1, "DATA INSERITA OK", "La data è stata inserita correttamente.");
+        }
+    }
+
+
+    public int checkDate() {
+
+
+        System.out.println("oggi è: " + LocalDate.now());
+
+        if (fromDate.getValue().isBefore(LocalDate.now())) {
+            System.out.println("data arr no");
+            return 0;
+        }
+
+        if (toDate.getValue().isBefore(fromDate.getValue()) || toDate.getValue().isEqual(fromDate.getValue())) {
+            System.out.println("data dep no");
+            return 1;
+        } else {
+            System.out.println("data ok");
+            return 2;
+
+        }
     }
 }

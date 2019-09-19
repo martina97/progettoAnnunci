@@ -58,7 +58,6 @@ public class ShowDashboardUIController {
             //abbiamo selezionato l'annuncio renter
             try {
 
-                System.out.println("stage è ]]]]]]]]]]]]]]]]]]]]]]]]]]]]" + stage);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/PostedRenterAnnounce.fxml"));
                 Parent root = loader.load();
                 PostedRenterAnnounceController controller = loader.getController();

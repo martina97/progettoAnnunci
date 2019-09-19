@@ -20,7 +20,7 @@ import java.util.List;
 public class MenuController {
     public Button createNewAnnounce;
     public Label title;
-
+    public Stage stage;
     private UserBean myBean = new UserBean();
 
     public Scene getMenuScene(){
@@ -28,7 +28,8 @@ public class MenuController {
         return scene;
     }
 
-    Stage stage;
+
+
 
     public void clickedNewAnnounceBtn(ActionEvent actionEvent) {
        Scene menuScene=getMenuScene();
@@ -140,7 +141,6 @@ public class MenuController {
         Scene menuScene=getMenuScene();
         stage = (Stage)menuScene.getWindow();
 
-        System.out.println("STAGE è *********************************" + stage);
 
         ArrayList<RenterAnnounceBean> renterList = new ArrayList<>();
         ArrayList<TenantAnnounceBean> tenantList = new ArrayList<>();
@@ -164,10 +164,6 @@ public class MenuController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-        //dopo aver cliccato viasualizza bacheca dobbiamo chiamare una funzione del controller show bacheca (UC) invece di creare direttamente un nuovo stage (scena)
-
 
     }
 }

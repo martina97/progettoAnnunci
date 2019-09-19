@@ -15,6 +15,7 @@ import java.io.IOException;
 public class ControllerLogin {
 
     private static ControllerLogin instance;
+    User myUser;
 
     private ControllerLogin() {
     }
@@ -95,7 +96,7 @@ public class ControllerLogin {
 
 
     public void checkUserType(UserBean bean, Stage stage) {
-        User myUser;
+
         String userType;
 
         DBFunctions dbf = new DBFunctions();

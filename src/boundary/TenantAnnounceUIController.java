@@ -29,7 +29,7 @@ public class TenantAnnounceUIController {
 
     //private renterAnnounceBean bean;
 
-    ControllerTenantAnnounce cta;
+    private ControllerTenantAnnounce cta;
 
     private TenantAnnounceBean bean = new TenantAnnounceBean();
 

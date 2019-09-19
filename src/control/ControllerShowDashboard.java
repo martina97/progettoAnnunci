@@ -27,10 +27,8 @@ public class ControllerShowDashboard {
 
         //creiamo le due liste che poi andiamo a mettere nelle listView di showDashboard...
         DBFunctions dbf= new DBFunctions();
-       // rList = dbf.searchRenterAnnounces();
-       // tList = dbf.searchTenantAnnounces();
         dbf.searchAnnounces(renterList,tenantList);
-        //renterList.add("---Nessuno---");
+
 
         for(int i=0;i<renterList.size();i++){
             System.out.println("R: "+renterList.get(i).getAddress());
@@ -39,7 +37,6 @@ public class ControllerShowDashboard {
             System.out.println("T: "+tenantList.get(i).getName());
         }
 
-        //ShowDashboardUIController bho= new ShowDashboardUIController(this);
 
     }
 

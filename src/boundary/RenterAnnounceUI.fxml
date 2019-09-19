@@ -124,7 +124,7 @@
                               <Label layoutX="21.0" layoutY="19.0" text="Descrizione:" />
                               <Label layoutX="25.0" layoutY="174.0" text="Proprietario:" />
                               <Label fx:id="ownerName" layoutX="99.0" layoutY="174.0" prefHeight="17.0" prefWidth="73.0" text="Label" />
-                              <Button fx:id="okBtn" layoutX="762.0" layoutY="85.0" mnemonicParsing="false"  text="OK" />
+                              <Button fx:id="okBtn" layoutX="762.0" layoutY="85.0" mnemonicParsing="false" onAction="#clickedOkBtn" text="OK" />
                            </children></AnchorPane>
                     </items>
                   </SplitPane>

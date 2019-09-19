@@ -19,52 +19,15 @@
 <jsp:useBean id="tab" scope="request" class="bean.TenantAnnounceBean" />
 
 <jsp:setProperty name="tab" property="*"/>
+<%    String s3 = String.valueOf(session.getAttribute("userType")); %>
 
-<%! boolean res = false; %>  <%-- title --%>
-<%! String s2 = ""; %>  <%-- idUser --%>
-<%! String s3 = ""; %>  <%-- city --%>
-<%! int s4 = 0; %>      <%-- room --%>
-<%! int s5 = 0; %>      <%-- people --%>
-<%! int s6 = 0;%>      <%-- bath --%>
-<%-- <%! String s7 ="" ; %>     <%-- dateArr --%>
-<%--- <%! String s8 = ""; %>     <%-- dateDep --%>
-<%! String s9 = ""; %>      <%-- wifi --%>
-<%! String s10 = ""; %>     <%-- garden --%>
-<%! String s11= ""; %>      <%-- animals --%>
-<%! String s12 = ""; %>     <%-- airConditioning --%>
-<%! String s13= ""; %>      <%-- parking --%>
+<%! boolean res = false; %>
 
 
 <%
     if (request.getParameter("title") != null) {
         if (request.getParameter("okBtn") != null) {
-           /* s1 = request.getParameter("title");
-            //tab.setTitle(s1);
-            System.out.println(tab.getTitle());
-            s2 = request.getParameter("idUser");
-            tab.setName(s2);
-            s3 = request.getParameter("city");
-            tab.setCity(s3);
-            s4 = Integer.parseInt(request.getParameter("room"));
-            tab.setRoom(s4);
-            s5 = Integer.parseInt(request.getParameter("people"));
-            tab.setPeople(s5);
-            s6 = Integer.parseInt(request.getParameter("bath"));
-            tab.setBath(s6);
-            //s7 = request.getParameter("dateArr");
-            //tab.setDateArr(LocalDate.parse(s7));
-            //s8 = request.getParameter("dateDep");
-            //tab.setDateDep(LocalDate.parse(s8));
-            s9 = request.getParameter("wifi");
-            tab.setWifi(s9);
-            s10 = request.getParameter("garden");
-            tab.setGarden(s10);
-            s11 = request.getParameter("animals");
-            tab.setAnimals(s11);
-            s12 = request.getParameter("airConditioning");
-            tab.setAirConditioning(s12);
-            s13 = request.getParameter("parking");
-            tab.setParking(s13); */
+
            if(tab.getWifi() == null) {
                tab.setWifi("no"); }
            else {
@@ -144,8 +107,9 @@
         <td><input name="city" type="text"></td>
        <%--  <%tab.setCity(request.getParameter("city"));%> --%>
         <td>Id Utente:</td>
-        <td><Label name="idUser" type="text"> </Label></td>
+        <td><Label name="idUser" id = "idUser" type="text"> </Label></td>
         <%-- <%tab.setName(request.getParameter("idUser"));%> --%>
+
     </tr>
 
     <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
